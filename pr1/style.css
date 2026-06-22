@@ -1,0 +1,1644 @@
+/* Сброс базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Обеспечивает плавную прокрутку по якорям */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Выполнение п. 4.12: Реакция на focus и active БЕЗ пунктира */
+
+/* 1. Убиваем стандартный пунктир везде */
+a:focus, button:focus, input:focus {
+    outline: none; 
+}
+
+/* 2. Для текстовых ссылок (в меню и футере) при фокусе меняем цвет на желтый */
+a:focus {
+    color: #DBAF15;
+}
+
+/* 3. Для логотипов (картинок) при фокусе делаем их слегка прозрачными */
+.logo:focus, .footer-logo:focus {
+    opacity: 0.7;
+}
+
+/* 4. Реакция на клик (:active) - элемент слегка "прожимается" */
+a:active, button:active {
+    opacity: 0.6;
+    transform: scale(0.98);
+}
+
+/* 5. Для полей ввода в калькуляторе оставляем аккуратную сплошную рамку (без пунктира) */
+input:focus {
+    outline: 2px solid #DBAF15;
+    outline-offset: 2px;
+}
+
+a:active, button:active {
+    opacity: 0.6;
+    transform: scale(0.98);
+}
+/* =========================================
+   Шапка (Header)
+   ========================================= */
+.header {
+    background-color: rgba(208, 177, 148, 0.9);
+    height: 80px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center; 
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* СТАЛО: */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none; /* Убирает дефолтную линию под логотипом в шапке */
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.logo-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.logo-desc {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover,
+.nav a:hover::after,
+.nav a.active::after {
+    width: 100%;
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}
+
+.phone a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.burger-menu {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* =========================================
+   Главный экран (Hero)
+   ========================================= */
+.hero {
+    position: relative;
+    width: 100%; 
+    height: 900px; 
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+        url('image/fone.png');
+    background-size: cover; 
+    background-position: center 80%; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; 
+}
+
+.hero-title::before,
+.hero-title::after {
+    content: "";
+    height: 2px;
+    width: 100px;
+    background-color: #693030;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}
+
+/* =========================================
+   Блок Цены / Калькулятор (Calculator)
+   ========================================= */
+.calculator {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.calc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #2F2F2F;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.calc-accent {
+    color: #DBAF15;
+}
+
+.calc-divider {
+    border: none;
+    border-top: 1px solid #9A6868;
+    width: 610px;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #4A4A4A;
+}
+
+.form-group input {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333333;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #A0A0A0;
+}
+
+/* Кнопка расчета с усиленной тенью */
+.calc-btn {
+    margin-top: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #DBAF15;
+    background-color: #ffffff;
+    border: 2px solid #DBAF15;
+    border-radius: 30px;
+    padding: 16px 30px;
+    cursor: pointer;
+    /* Усилила тень для яркого желтого свечения */
+    box-shadow: 0px 8px 25px rgba(219, 175, 21, 0.45); 
+    transition: all 0.3s ease;
+}
+
+.calc-btn:hover {
+    background-color: #DBAF15;
+    color: #ffffff;
+}
+
+.calc-card {
+    display: flex;
+    align-items: stretch; /* Принудительно заставляем и картинку, и форму быть одинаковой максимальной высоты */
+    background-color: #F6EFE7; 
+    border-radius: 0 20px 20px 0; 
+    overflow: hidden;
+    min-height: 420px; 
+    
+    margin-left: calc(50% - 50vw);
+    width: calc(100% + 50vw - 50%);
+}
+
+.calc-image {
+    flex: 1; 
+    align-self: stretch; /* Жестко говорим блоку занять 100% высоты */
+    background-image: url('image/b2i1.png');
+    /* background-size: cover гарантирует, что изображение заполнит блок без пустых полос */
+    background-size: cover; 
+    background-position: left center; 
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.calc-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px; 
+    bottom: 0;
+    /* Делаем ширину градиента фиксированной, чтобы он не разъезжался на широких мониторах */
+    width: 350px; 
+    background: linear-gradient(to right, rgba(246, 239, 231, 0) 0%, #F6EFE7 100%);
+}
+
+.calc-form-wrapper {
+    /* Жестко фиксируем блок с формой, чтобы он не сжимался и не уезжал */
+    flex: 0 0 450px; 
+    padding: 50px 50px 50px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2; 
+}
+
+.calc-form {
+    width: 100%;
+    max-width: 380px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* =========================================
+   Адаптивность (Media Queries)
+   ========================================= */
+
+@media (max-width: 992px) {
+    
+    .burger-menu {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+    
+    .hero-subtitle {
+        font-size: 22px;
+    }
+
+    /* Адаптив под планшеты */
+    .calc-title {
+        font-size: 38px;
+    }
+
+    .calc-card {
+        margin-left: 0; /* Возвращаем карточку в пределы контейнера */
+        width: 100%;
+        border-radius: 20px; /* Возвращаем скругления со всех сторон */
+        flex-direction: column;
+    }
+
+    .calc-image {
+        flex: 1; 
+        align-self: stretch; 
+        margin: 40px 0; 
+        background-image: url('image/b2i1.png');
+        background-size: cover; 
+        background-position: left center; 
+    background-repeat: no-repeat;
+    position: relative;
+    }
+
+    .calc-image::after {
+        width: 100%;
+        height: 50%; /* Градиент теперь идет снизу вверх */
+        top: auto;
+        bottom: -1px;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(246, 239, 231, 0) 0%, #F6EFE7 100%);
+    }
+
+    .calc-form-wrapper {
+        flex: none;
+        width: 100%;
+        padding: 40px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero{
+        background: url('image/fone_mobile.png') center / cover no-repeat !important;
+    }
+    .header {
+        padding: 12px 0;
+    }
+
+    .logo-icon { width: 24px; height: 24px; }
+    .logo-title { font-size: 15px; letter-spacing: 1px; }
+    .logo-desc { font-size: 9px; }
+    .phone a { font-size: 13px; }
+
+    .hero-title {
+        font-size: 28px;
+        letter-spacing: 4px;
+        gap: 15px;
+    }
+    
+    .hero-title::before,
+    .hero-title::after { width: 35px; }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    /* Адаптив под телефон */
+    .calculator {
+        padding: 50px 0;
+    }
+
+    .calc-title {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .calc-divider {
+        width: 360px;
+        margin-bottom: 30px;
+    }
+
+    .calc-image {
+        display: none; 
+    }
+
+    .calc-card {
+        min-height: auto;
+    }
+
+    .calc-form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .calc-form {
+        gap: 15px;
+    }
+
+    .form-group input {
+        padding: 14px 16px;
+    }
+
+    .calc-btn {
+        margin-top: 15px;
+        width: 100%; 
+    }
+}
+/* =========================================
+   Блок "Примеры работ" (Portfolio)
+   ========================================= */
+.portfolio {
+    padding: 80px 0;
+    background-color: #FAFAF8; /* Светло-бежевый фон секции, как на макете */
+}
+
+/* Общие стили заголовков секций (можно переиспользовать) */
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #2F2F2F;
+    text-align: center;
+    
+    /* 1. Заставляем блок облегать текст по ширине */
+    width: fit-content;
+    max-width: 100%;
+    
+    /* 2. Центрируем сам блок по горизонтали и делаем отступ вниз */
+    margin: 0 auto 60px auto; 
+    
+    /* 3. Рисуем линию точно по ширине текста */
+    padding-bottom: 15px; /* Расстояние от букв до линии */
+    border-bottom: 1px solid #9A6868;
+}
+
+/* Старый тег <hr> нам больше не нужен, скрываем его */
+.section-divider {
+    display: none;
+}
+
+/* Сетка для карточек (2 колонки на десктопе) */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+}
+
+/* -------------------------------------
+   МАГИЯ CSS GRID ДЛЯ КАРТОЧКИ
+   ------------------------------------- */
+/* Привязываем элементы HTML к областям Grid */
+.port-media { grid-area: media; }
+.port-title { grid-area: title; }
+.port-stats { grid-area: stats; }
+.port-video { grid-area: video; }
+.port-btn   { grid-area: btn; }
+
+/* Блок фото (До/После и миниатюры) */
+.port-media {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.port-ba {
+    position: relative;
+    width: 100%;
+    height: 180px; 
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Линия по центру со стрелочками */
+.ba-center-line {
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Расстояние между стрелочками */
+}
+
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 20px;
+    /* Увеличили внутренние отступы (по вертикали 35px, по горизонтали 40px) */
+    padding: 35px 40px; 
+    border: 1px solid #F0F0F0;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.03);
+    display: flex;
+    /* Увеличили расстояние между фото и текстом */
+    gap: 40px; 
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.06); 
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.port-left {
+    flex: 1; /* Занимает 50% */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.port-right {
+    flex: 1; /* Занимает 50% */
+    display: flex;
+    flex-direction: column;
+}
+
+.port-ba-img {
+    width: 50%; /* Ровно пополам */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Белая линия по центру */
+.ba-divider {
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стрелочки До/После (со смещением, как на макете) */
+.ba-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: -30px; /* Поднимаем чуть выше центра */
+}
+
+.ba-labels {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(188, 151, 120, 0.85); 
+    display: flex;
+    z-index: 3;
+}
+
+.label-text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.port-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- ПРАВАЯ КОЛОНКА (ТЕКСТ) --- */
+.port-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #4A4A4A;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+.port-stats {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stat-item strong {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #333;
+}
+
+.stat-item span {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #666;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(188, 151, 120, 0.6); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.port-video:hover .video-overlay {
+    background: rgba(188, 151, 120, 0.8);
+}
+
+/* Круглая кнопка Play */
+.play-btn {
+    width: 36px;
+    height: 36px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- КНОПКА ПОДРОБНЕЕ --- */
+.port-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 220px; 
+    height: 48px;
+    border: 2px solid #DBAF15;
+    border-radius: 30px;
+    color: #DBAF15;
+    background: white;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    align-self: center; /* Центрируем кнопку в правой колонке */
+    
+    /* ТО САМОЕ ЖЕЛТОЕ СВЕЧЕНИЕ ИЗ МАКЕТА */
+    box-shadow: 0px 8px 25px rgba(219, 175, 21, 0.35); 
+    transition: all 0.3s ease;
+    margin-top: 25px;
+}
+
+.port-btn:hover {
+    background-color: #DBAF15;
+    color: white;
+    box-shadow: 0px 8px 25px rgba(219, 175, 21, 0.6);
+}
+
+.portfolio .container {
+    max-width: 1480px; /* 700px + 700px + отступы */
+}
+
+/* Увеличиваем расстояние между самими карточками */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px; 
+}
+
+.port-ba-container {
+    position: relative;
+    width: 100%;
+    /* Увеличили высоту главного фото с 220px до 260px */
+    height: 260px; 
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.port-video {
+    width: 100%;
+    /* Увеличили высоту видео-блока с 120px до 140px */
+    height: 140px; 
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: auto; 
+}
+
+/* =========================================
+   Адаптив (Планшеты и Мобилки)
+   ========================================= */
+
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* По одной карточке в ряд */
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .portfolio {
+        padding: 50px 0;
+    }
+
+    .port-ba {
+        height: 220px; /* Чуть увеличиваем фото на мобилке */
+    }
+
+    .portfolio-card {
+        display: flex;
+        flex-direction: column;
+        padding: 35px 20px;
+        /* Легкий градиентный фон, как на макете */
+        background: linear-gradient(180deg, #FFFFFF 0%, #F8F2EA 100%);
+        border: none;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        margin-bottom: 40px;
+        gap: 20px; /* Стандартный отступ между всеми элементами */
+    }
+
+    /* 2. РАЗРУШАЕМ КОЛОНКИ: 
+       Это позволит нам управлять порядком каждого элемента внутри напрямую */
+    .port-left, .port-right {
+        display: contents;
+    }
+
+    /* 3. РАССТАВЛЯЕМ ПОРЯДОК (order) И ЦЕНТРИРУЕМ */
+    
+    /* 1-е место: Заголовок */
+    .port-title {
+        order: 1;
+        text-align: center;
+        font-size: 26px;
+        font-style: normal; /* Возвращаем нормальный шрифт, без курсива */
+        margin: 0;
+    }
+
+    /* 2-е место: Цифры */
+    .port-stats {
+        order: 2;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 0;
+    }
+
+    .stat-item {
+        align-items: center; /* Центрируем текст внутри статистики */
+    }
+
+    /* 3-е место: Блок До/После */
+    .port-ba-container {
+        order: 3;
+        height: 200px; /* Чуть уменьшаем высоту для телефона */
+        border-radius: 10px;
+    }
+
+    /* 4-е место: Миниатюры */
+    .port-thumbs {
+        order: 4;
+        gap: 10px;
+    }
+
+    /* 5-е место: Видео */
+    .port-video {
+        order: 5;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* 6-е место: Кнопка Подробнее */
+    .port-btn {
+        order: 6;
+        margin: 0 auto; /* Центрируем кнопку */
+        max-width: 220px;
+    }
+}
+/* =========================================
+   Блок "Цены" (Prices)
+   ========================================= */
+.prices-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden; /* Скрываем вылезающие края фоновой буквы */
+}
+
+.relative {
+    position: relative;
+}
+
+/* Огромная фоновая буква Р */
+.bg-ruble {
+    position: absolute;
+    top: -100px;
+    left: -150px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 450px;
+    font-weight: 700;
+    line-height: 1;
+    color: #F9F7F4; /* Очень бледный бежевый оттенок */
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Поднимаем контент над фоновой буквой */
+.section-title, .section-divider, .prices-slider-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Сетка для цен (Десктоп) */
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 100px; /* Вертикальный и горизонтальный отступы */
+    margin-top: 60px;
+}
+
+.category-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 25px;
+}
+
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #EAE3DC; /* Верхняя линия списка */
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #EAE3DC; /* Разделительные линии */
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #4A4A4A;
+}
+
+/* Прячем точки на десктопе */
+.slider-dots {
+    display: none; 
+}
+
+
+/* =========================================
+   Адаптив: Планшеты и Мобилки
+   ========================================= */
+
+@media (max-width: 992px) {
+    .prices-grid {
+        gap: 50px 40px;
+    }
+    
+    .bg-ruble {
+        font-size: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .prices-section {
+        padding: 60px 0;
+    }
+
+    .bg-ruble {
+        font-size: 280px;
+        top: -10px;
+        left: -10px;
+    }
+
+    /* Превращаем сетку в горизонтальный слайдер на телефоне */
+    .prices-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        /* Нативная CSS-прокрутка по карточкам */
+        scroll-snap-type: x mandatory; 
+        scroll-behavior: smooth;
+        gap: 20px;
+        margin-top: 40px;
+        padding-bottom: 10px;
+        
+        /* Убираем видимый ползунок скроллбара */
+        -ms-overflow-style: none;  /* для IE/Edge */
+        scrollbar-width: none;  /* для Firefox */
+    }
+    
+    .prices-grid::-webkit-scrollbar {
+        display: none; /* для Chrome/Safari/Opera */
+    }
+
+    .price-category {
+        /* Карточка занимает почти всю ширину экрана */
+        flex: 0 0 95%; 
+        scroll-snap-align: center; /* Центрируем при остановке свайпа */
+    }
+
+    /* Показываем точки навигации */
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #F1EAE2; /* Светло-бежевый для неактивных */
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #C3AA96; /* Темный бежевый для активной */
+    }
+}
+/* =========================================
+   Блок "Новости" (News / SEO)
+   ========================================= */
+.news-section {
+    padding: 100px 0;
+    background-color: #ffffff; /* Светло-серый фон из макета */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Огромная фоновая кавычка */
+.bg-quote {
+    position: absolute;
+    top: -200px;
+    left: -150px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 850px;
+    line-height: 1;
+    color: #F9F7F4; /* Очень бледный серый цвет */
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.news-text {
+    position: relative;
+    z-index: 1; /* Текст находится поверх фоновой кавычки */
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4A4A4A;
+    max-width: 2000px;
+    margin: 0 auto; /* Центрируем текстовый блок */
+}
+
+.news-text p {
+    margin-bottom: 25px;
+}
+
+.news-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Скрываем мобильный текст на десктопе по умолчанию */
+.mobile-text {
+    display: none;
+}
+/* --- Стили для стрелочки в мобильном тексте --- */
+.read-more-arrow {
+    color: #9A6868; /* Тот же бордовый цвет, что и у линии */
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+@media (max-width: 600px) {
+    .news-section {
+        padding: 60px 0;
+    }
+
+    /* Переопределяем стили заголовка только для блока новостей */
+    .news-section .section-title {
+        text-align: left;
+        margin: 0 0 30px 0; /* Убираем центрирование (auto) и задаем отступ вниз */
+        font-size: 32px; 
+        line-height: 1.2;
+        padding-bottom: 12px;
+        max-width: 270px; 
+    }
+
+    /* Скрываем полный текст */
+    .desktop-text {
+        display: none;
+    }
+
+    /* Показываем сокращенный текст */
+    .mobile-text {
+        display: block;
+        font-size: 15px; /* Размер шрифта для комфортного чтения */
+        line-height: 1.6;
+        color: #4A4A4A;
+    }
+}
+
+.reviews-slider-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* =========================================
+   Адаптив блока "Отзывы" (Мобилки)
+   ========================================= */
+@media (max-width: 768px) {
+
+    .reviews-track {
+        position: relative; /* Включаем позиционирование для стрелок */
+        gap: 0;
+    }
+
+    /* Скрываем все неактивные карточки */
+    .review-card:not(.active) {
+        display: none;
+    }
+
+    .review-photo {
+        height: 280px; /* Чуть уменьшаем высоту фото на телефоне */
+    }
+
+    /* Стрелки выносим по краям экрана поверх карточки или сбоку */
+    .review-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 5px;
+    }
+    
+    .review-arrow:hover {
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    /* Делаем стрелки визуально толще, как на мобильном макете */
+    .review-arrow svg {
+        width: 24px;
+        height: 40px;
+    }
+    
+    .review-arrow svg stroke {
+        stroke-width: 3px; 
+    }
+}
+/* =========================================
+   Блок "Отзывы" (Работающая карусель - 3 карточки)
+   ========================================= */
+.reviews-section {
+    padding: 80px 0 100px;
+    background-color: #ffffff;
+}
+
+.reviews-slider-wrapper {
+    position: relative;
+    /* Точная ширина для 3 карточек: (472px * 3) + (2 отступа по 30px) = 1476px */
+    max-width: 1476px; 
+    margin: 0 auto;
+    padding: 40px 0; /* Место для тени */
+    overflow: hidden; /* Обрезаем 4-ю и 5-ю карточки, оставляя ровно 3 */
+}
+
+.reviews-track {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Отступ между карточками */
+    width: max-content;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* Строгие размеры карточки со скриншота */
+.review-card {
+    width: 472px; /* Точная ширина */
+    flex-shrink: 0; 
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    
+    /* Убираем прозрачность, теперь боковые карточки яркие */
+    opacity: 1; 
+    
+    /* Неактивные (боковые) карточки масштабируем до 85% */
+    transform: scale(0.85); 
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Активная карточка (по центру) */
+.review-card.active {
+    transform: scale(1); /* Центральная в масштабе 100% */
+    z-index: 2;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Точные размеры фото и текста */
+.review-photo {
+    height: 346px; 
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.review-author {
+    height: 102px; 
+    background-color: #D3C0B1;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px; /* Немного увеличили текст */
+    font-weight: 500;
+}
+
+/* --- Стили стрелок --- */
+.review-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.review-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Размещаем стрелки точно в пустотах между центральной и боковыми карточками */
+/* 472px / 2 = 236px (половина карточки) + 40px на отступ = 276px от центра */
+.prev-arrow { left: calc(50% - 276px); }
+.next-arrow { right: calc(50% - 276px); }
+
+/* --- Точки --- */
+.reviews-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.rev-dot {
+    width: 30px;
+    height: 4px;
+    background-color: #F2EBE5;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rev-dot.active { background-color: #BFA58E; }
+/* =========================================
+   Адаптив карусели (Планшеты и Телефоны)
+   ========================================= */
+@media (max-width: 1500px) {
+    /* Если экран меньше 1500px, разрешаем обертке сжиматься */
+    .reviews-slider-wrapper { max-width: 100vw; }
+    /* Немного смещаем стрелки ближе к краям экрана */
+    .prev-arrow { left: 5%; }
+    .next-arrow { right: 5%; }
+}
+
+@media (max-width: 600px) {
+    .reviews-section { padding: 50px 0 60px; }
+    
+    .review-card {
+        width: 85vw; /* Карточка занимает почти всю ширину телефона */
+    }
+    
+    .review-photo { height: 280px; }
+    .review-author { height: 80px; font-size: 16px; }
+    
+    /* На телефоне боковые карточки делаем полупрозрачными для красоты */
+    .review-card { transform: scale(0.95); opacity: 0.4; }
+    .review-card.active { transform: scale(1); opacity: 1; }
+
+    .prev-arrow { left: 0; }
+    .next-arrow { right: 0; }
+}
+/* =========================================
+   Футер (Footer)
+   ========================================= */
+.footer {
+    background-color: #FAF9F6; /* Светло-бежевый фон */
+    padding: 80px 0;
+    border-top: 1px solid #EAE3DC;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr; /* Пропорции колонок на десктопе */
+    gap: 30px;
+}
+
+/* --- Заголовки колонок --- */
+.footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+}
+
+/* --- Списки ссылок --- */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Расстояние между ссылками */
+}
+
+.footer-list a {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #8A8A8A; /* Серый цвет текста */
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+    color: #DBAF15; /* Желтый цвет при наведении */
+}
+
+/* --- Текстовый блок (Адрес) --- */
+.footer-text-block p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #8A8A8A;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-schedule {
+    color: #B0B0B0 !important; /* Более светлый серый для времени работы */
+}
+
+/* --- Логотип в футере --- */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none; /* Убирает дефолтную линию под логотипом в футере */
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-text .logo-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 1.5px;
+}
+
+.footer-logo-text .logo-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    color: #666666;
+    margin-top: 2px;
+}
+
+/* Иконка ванны скрыта на десктопе по умолчанию */
+.footer-icon-bathtub {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+/* --- Соцсети --- */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #8A8A8A;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #DBAF15;
+    transform: translateY(-3px);
+}
+
+.social-icons svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Скрытие мобильных элементов на десктопе */
+.mobile-link, 
+.mobile-desc,
+.mobile-br {
+    display: none;
+}
+
+
+/* =========================================
+   Адаптив Футера (Планшеты и Мобилки)
+   ========================================= */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr; /* 2 колонки на планшете */
+        gap: 50px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 50px 0;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Строгая сетка 2 колонки */
+        gap: 40px 10px;
+    }
+
+    /* Логотип растягивается на всю ширину (обе колонки) */
+    .footer-logo-col {
+        grid-column: 1 / -1; 
+        margin-bottom: 10px;
+    }
+
+    /* Показываем иконку ванны и мобильное описание */
+    .footer-icon-bathtub {
+        display: block;
+    }
+    .mobile-desc {
+        display: block;
+        font-size: 14px; /* Чуть крупнее на мобильном */
+    }
+    .desktop-desc {
+        display: none;
+    }
+    
+    .footer-logo-text .logo-title {
+        font-size: 25px;
+    }
+
+    /* Скрываем десктопные элементы */
+    .desktop-col, 
+    .desktop-link {
+        display: none;
+    }
+
+    /* Показываем мобильные ссылки (Цены и точки) */
+    .mobile-link {
+        display: block;
+    }
+    
+    .mobile-br {
+        display: block; /* Переносы строк в адресе как на скрине */
+    }
+
+    .dots-link a {
+        font-size: 24px;
+        letter-spacing: 2px;
+        line-height: 0.5;
+    }
+
+    /* Переопределяем стили для колонок на телефоне */
+    .footer-title {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .footer-list a, 
+    .footer-text-block p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .footer-list {
+        gap: 20px; /* Увеличиваем отступы между пунктами на телефоне */
+    }
+
+    /* Соцсети подтягиваем ближе к тексту на телефоне */
+    .social-icons {
+        margin-top: 25px;
+        gap: 20px;
+    }
+    
+    .social-icons a {
+        width: 26px;
+        height: 26px;
+    }
+}
+/* Выполнение пункта 5: CSS3-фильтры */
+.thumb {
+    transition: filter 0.3s ease; /* Добавляем плавность */
+}
+
+.thumb:hover {
+    filter: brightness(0.6) sepia(20%); /* Делает картинку темнее и добавляет легкий теплый оттенок */
+}
+/* Выполнение пункта 8: Анимация через @keyframes */
+@keyframes pulseBtn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.calc-btn {
+    /* Добавляем анимацию к существующим стилям кнопки */
+    animation: pulseBtn 2s infinite ease-in-out; 
+}
+
+/* Чтобы анимация останавливалась при наведении */
+.calc-btn:hover {
+    animation-play-state: paused; 
+}
+/* Выполнение пункта 10 (3D эффекты) */
+.review-card {
+    perspective: 1000px; /* Включаем 3D-пространство */
+}
+
+.review-photo {
+    transition: transform 0.5s ease;
+}
+
+.review-card.active:hover .review-photo {
+    /* Легкий наклон картинки по осям X и Y (3D-трансформация) */
+    transform: rotateX(5deg) rotateY(-5deg); 
+}
+/* Скрываем мобильную шапку меню на десктопе */
+.mobile-nav-header {
+    display: none;
+}
+
+/* =========================================
+   ПОЛНОЭКРАННОЕ МОБИЛЬНОЕ МЕНЮ
+   ========================================= */
+@media (max-width: 992px) {
+    .nav {
+        /* Делаем меню полноэкранным оверлеем */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Прячем за правым краем экрана */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(200, 172, 145, 0.96); /* Полупрозрачный бежевый цвет из макета */
+        z-index: 2000;
+        
+        /* Плавный выезд меню справа налево */
+        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        display: flex;
+        flex-direction: column;
+        padding: 25px 25px 40px;
+    }
+
+    /* Класс, который JS будет добавлять для открытия меню */
+    .nav.open {
+        right: 0; 
+    }
+
+    /* Показываем шапку внутри меню */
+    .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 60px;
+        width: 100%;
+    }
+
+    /* Полупрозрачный логотип как на скрине */
+    .mobile-menu-logo {
+        opacity: 0.35; 
+        gap: 8px;
+    }
+
+    .mobile-menu-logo .logo-title {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .mobile-menu-logo .logo-desc {
+        font-size: 10px;
+    }
+
+    /* Крестик */
+    .close-menu {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-top: -5px;
+    }
+
+    /* Список ссылок */
+    .nav ul {
+        flex-direction: column;
+        align-items: flex-end; /* Прижимаем текст к правому краю */
+        gap: 35px;
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 20px; /* Крупный текст как на макете */
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Блокируем прокрутку сайта на фоне, когда меню открыто */
+body.menu-open {
+    overflow: hidden;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="media/form.png">
+    <meta charset="UTF-8">
+    <title>Анкета-опросник</title>
+    <meta name="description" content="Анкета с опросом">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей и скриптов -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<h2>📝 Анкета: Ваше мнение о моём сайте</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Личные данные</legend>
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Оценка сайта</legend>
+                    <p>Как вы нашли этот сайт?</p>
+                    <input type="radio" id="search" name="found" value="search">
+                    <label for="search">Поисковик</label><br>
+                    <input type="radio" id="social" name="found" value="social">
+                    <label for="social">Соцсети</label><br>
+                    <input type="radio" id="friend" name="found" value="friend">
+                    <label for="friend">Друзья</label><br>
+
+                    <p>Какие разделы вам понравились? (можно выбрать несколько)</p>
+                    <input type="checkbox" id="ch_text" name="like" value="text">
+                    <label for="ch_text">Текст</label><br>
+                    <input type="checkbox" id="ch_media" name="like" value="media">
+                    <label for="ch_media">Медиа</label><br>
+                    <input type="checkbox" id="ch_table" name="like" value="table">
+                    <label for="ch_table">Таблица</label><br>
+                    <input type="checkbox" id="ch_form" name="like" value="form">
+                    <label for="ch_form">Форма</label><br>
+
+                    <p>Ваш уровень владения HTML:</p>
+                    <select name="level">
+                        <option value="beginner">Новичок</option>
+                        <option value="intermediate" selected>Средний</option>
+                        <option value="advanced">Продвинутый</option>
+                        <option value="pro">Профи</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Обратная связь</legend>
+                    <label for="comment">Ваши пожелания / замечания:</label><br>
+                    <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Здесь можно написать пару тёплых слов..."></textarea>
+                </fieldset>
+
+                <button type="submit">Отправить анкету</button>
+                <button type="reset">Очистить</button>
+            </form>
+
+            <a href="index.html"> Перейти на главную страницу</a>
+</body>
+</html>

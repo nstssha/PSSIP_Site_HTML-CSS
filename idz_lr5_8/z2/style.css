@@ -1,0 +1,70 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            padding: 10px; 
+            background: #f4f4f4;
+            /* Гибкий шрифт, зависящий от ширины экрана */
+            font-size: calc(14px + 0.3vw); 
+            line-height: 1.4;
+        }
+
+        /* Гибкие изображения (Требование 5) */
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            border-radius: 4px;
+        }
+
+        .wrapper { 
+            display: grid; 
+            width: 100%; 
+            gap: 1%;
+            /* Резиновые колонки в процентах */
+            grid-template-columns: 30% 38% 30%; 
+        }
+
+        /* 2. ШАПКА И ПОДВАЛ (Flexbox для распределения лого и меню) */
+        header, footer { 
+            grid-column: 1 / 4; 
+            background: #8e44ad; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2%;
+            min-height: 80px;
+        }
+
+        /* Шапка: Лого и Меню (Требование 3) */
+        .logo { font-size: 1.6rem; font-weight: bold; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; gap: 15px; }
+        nav a { color: white; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { opacity: 0.7; }
+
+        /* Подвал: Копирайт и Соцсети (Требование 4) */
+        footer { background: #2c3e50; font-size: 0.8rem; }
+        .socials a { color: #8e44ad; background: white; padding: 3px 8px; border-radius: 3px; margin-left: 10px; text-decoration: none; }
+
+        /* 3. СТРУКТУРА КОЛОНОК */
+        .col-1, .col-3 { display: flex; flex-direction: column; gap: 10px; }
+        
+        .box { 
+            background: #fff; 
+            border: 2px solid #2c3e50; 
+            padding: 15px;
+            display: flex; 
+            flex-direction: column;
+            gap: 10px;
+            overflow: hidden;
+        }
+
+        .h-small { min-height: 150px; }
+        .h-med { min-height: 310px; }
+
+        /* Блок 4 (Центральный) */
+        .col-2 { background: #fff; min-height: 400px; }
+
+        h3 { font-size: 1.1rem; color: #2c3e50; }
+        p { font-size: 0.9rem; color: #666; }

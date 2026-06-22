@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.lab-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+}
+
+.lab-card {
+    display: block;
+    padding: 20px;
+    background: white;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid #007bff;
+}
+
+.lab-card h2 {
+    margin: 0 0 10px 0;
+    color: #007bff;
+}
+/* Общие стили карточки */
+.lab-card {
+    display: block;
+    background: white;
+    text-decoration: none;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden; /* Чтобы скруглить углы внутренних элементов */
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+/* Стили для карточек с вложенными ссылками */
+.no-padding {
+    padding: 0; 
+}
+
+.card-header {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+/* Список под-ссылок */
+.sub-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-links a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+}
+
+.sub-links a:last-child {
+    border-bottom: none;
+}
+
+.sub-links a:hover {
+    background-color: #e7f1ff;
+    color: #007bff;
+    padding-left: 25px; /* Небольшой эффект при наведении */
+}
+
+/* Эффект для одиночных карточек */
+a.lab-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}

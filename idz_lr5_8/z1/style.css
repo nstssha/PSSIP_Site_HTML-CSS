@@ -1,0 +1,85 @@
+/*Глобальные гибкие стили*/ 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background: #f0f0f0; 
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            /* Гибкий шрифт: базовый размер + зависимость от вьюпорта */
+            font-size: calc(14px + 0.1vw); 
+            line-height: 1.4;
+        }
+
+        /* Чтобы картинки не вылезали за блоки и сжимались (Требование 5) */
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            border-radius: 5px;
+        }
+
+        /* 2. СЕТКА МАКЕТА */
+        .wrapper { 
+            width: 1200px; 
+            margin: 20px auto;
+            display: grid; 
+            gap: 10px; 
+            grid-template-areas: 
+                "header header header"
+                "b1 b4 b5"
+                "b2 b4 b5"
+                "b3 b4 b6"
+                "footer footer footer";
+            /* Определяем ширину колонок для точности */
+            grid-template-columns: 300px 580px 300px;
+        }
+
+        /* 3. ШАПКА (Требование 3) */
+        header { 
+            grid-area: header; 
+            background: #3498db; 
+            height: 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            color: white;
+        }
+        .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 2px; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: #2c3e50; }
+
+        /* 4. ПОДВАЛ (Требование 4) */
+        footer { 
+            grid-area: footer; 
+            background: #34495e; 
+            min-height: 80px; 
+            color: white; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        .socials a { color: #1abc9c; margin-left: 15px; text-decoration: none; font-weight: bold; }
+
+        /* 5. БЛОКИ КОНТЕНТА */
+        .block { 
+            border: 1px solid #2c3e50; 
+            padding: 15px;
+            overflow: hidden; /* Чтобы гибкий контент не ломал сетку */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Ваши оригинальные цвета и области */
+        .b1 { grid-area: b1; background: #e74c3c; color: white; }
+        .b2 { grid-area: b2; background: #e67e22; color: white; }
+        .b3 { grid-area: b3; background: #f1c40f; }
+        .b4 { grid-area: b4; background: #fff; min-height: 470px; } /* Белый фон для текста */
+        .b5 { grid-area: b5; background: #9b59b6; color: white; }
+        .b6 { grid-area: b6; background: #1abc9c; color: white; }
+
+        h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        p { font-size: 0.9rem; }

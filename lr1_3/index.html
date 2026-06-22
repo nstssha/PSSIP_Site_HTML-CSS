@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="media/x-icon.png">
+    <meta charset="UTF-8">
+    <title>HTML шпаргалка</title>
+    <meta name="description" content="Сайт-отчёт по теме «Как я знаю теги HTML». Демонстрация всех основных групп тегов в одном документе.">
+    <meta name="keywords" lang="ru" content="HTML, теги, семантика, списки, таблицы, формы, медиа, гиперссылки, спецсимволы">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение стилей и скриптов -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Шапка сайта с заголовком и кратким описанием -->
+    <header>
+        <h1>HTML учебник-шпаргалка</h1>
+        <p>Этот сайт — живой учебник, в котором каждая смысловая группа тегов проиллюстрирована рабочими примерами. Все элементы собраны в одном <code>index.html</code> с соблюдением строгой семантики и валидности W3C.</p>
+    </header>
+
+    <!-- Навигация по разделам (внутренние анкерные ссылки) -->
+    <nav>
+        <h2>Содержание</h2>
+        <ul>
+            <li><a href="#text">🔤 Оформление текста</a></li>
+            <li><a href="#lists">📋 Списки</a></li>
+            <li><a href="#images">🖼️ Изображения</a></li>
+            <li><a href="#media">🎵 Аудио и видео</a></li>
+            <li><a href="#table">📊 Таблицы с объединением</a></li>
+            <li><a href="#form">📝 Пользовательские формы</a></li>
+            <li><a href="#links">🔗 Гиперссылки</a></li>
+            <li><a href="#specials">⚙️ Спецсимволы</a></li>
+        </ul>
+    </nav>
+
+    <!-- Основное содержание: каждый раздел — отдельная семантическая секция -->
+    <main>
+
+        <!-- 2. Оформление текста -->
+        <section id="text">
+            <h2>Форматирование текста</h2>
+            <p>Это обычный абзац. Здесь мы демонстрируем базовые и расширенные возможности разметки текста:</p>
+            <ul>
+                <li><b>Жирный (b)</b> и <strong>важный (strong)</strong></li>
+                <li><i>Курсив (i)</i> и <em>акцентированный (em)</em></li>
+                <li><u>Подчёркнутый (u)</u> и <ins>вставленный (ins)</ins></li>
+                <li><s>Перечёркнутый (s)</s> и <del>удалённый (del)</del></li>
+                <li><mark>Выделенный цветом (mark)</mark></li>
+                <li>Верхний индекс: x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup></li>
+                <li>Нижний индекс: H<sub>2</sub>O, CO<sub>2</sub></li>
+                <li><small>Мелкий текст (small)</small></li>
+                <li><code>Моноширинный код (code)</code></li>
+                <li><pre>Предварительно 
+  отформатированный
+     текст (pre)</pre></li>
+            </ul>
+        </section>
+
+        <!-- 3. Списки трёх основных типов -->
+        <section id="lists">
+            <h2>Списки: маркированный, нумерованный, список определений</h2>
+            <h3>Основные HTML теги</h3>
+            <ul>
+                <li>&lt;html&gt;</li>
+                <li>&lt;head&gt;</li>
+                <li>&lt;body&gt;</li>
+            </ul>
+            <h3>Топ-3 языка программирования (нумерованный)</h3>
+            <ol>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>HTML / CSS (да, это не ЯП, но без них никуда!)</li>
+            </ol>
+            <h3>Словарь тегов (список определений)</h3>
+            <dl>
+                <dt>&lt;section&gt;</dt>
+                <dd>Смысловой раздел документа</dd>
+                <dt>&lt;article&gt;</dt>
+                <dd>Самостоятельная, независимая часть контента</dd>
+                <dt>&lt;aside&gt;</dt>
+                <dd>Боковая панель или дополнительный контент</dd>
+            </dl>
+        </section>
+
+        <!-- 4. Графические изображения с корректным описанием -->
+        <section id="images">
+            <h2>Изображения (локальные, из папки /media)</h2>
+                <!-- Файл должен лежать в media/ -->
+            <figure>
+                <img src="media/images.png" alt="Схема основных тегов HTML" width="400" height="250">
+                <figcaption>Визуализация изученных тегов (media/html-tags.png)</figcaption>
+            </figure>
+            <p><i>Изображение расположено в подпапке <code>media/</code> относительно корня проекта.</i></p>
+        </section>
+
+        <!-- 5. Аудио и видео контент -->
+        <section id="media">
+            <h2>Аудио и видеоконтент</h2>
+            <h3>🎵 Расслабляющее аудио</h3>
+            <audio controls preload="metadata">
+                <source src="media/ambient-music.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает встроенное аудио. <a href="media/ambient-music.mp3" download>Скачайте трек</a>.
+            </audio>
+
+            <h3>📺 Внешнее видео с YouTube (абсолютный путь)</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SKRydSA2bYA?si=6rvM1JKZsCIkd0co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p><small>Видео вставлено через <code>&lt;iframe&gt;</code> — разрешённый абсолютный путь.</small></p>
+        </section>
+
+        <!-- 6. Таблица тегов с объединением ячеек (rowspan, colspan) -->
+        <section id="table">
+            <h2>Таблица: основные группы тегов HTML</h2>
+            <table border="1" cellpadding="6">
+                <caption>Сводная таблица тегов, использованных на этом сайте</caption>
+                <thead>
+                    <tr>
+                        <th>Категория</th>
+                        <th>Тег</th>
+                        <th>Описание / Назначение</th>
+                        <th>Пример использования</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Семантические теги -->
+                    <tr>
+                        <td rowspan="7">🧱 Семантика</td>
+                        <td>&lt;header&gt;</td>
+                        <td>Шапка документа или раздела</td>
+                        <td>Вверху страницы с заголовком h1</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;nav&gt;</td>
+                        <td>Навигационное меню</td>
+                        <td>Ссылки на разделы (якоря)</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;main&gt;</td>
+                        <td>Основной уникальный контент</td>
+                        <td>Содержит все section данной страницы</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;section&gt;</td>
+                        <td>Смысловой раздел</td>
+                        <td>&lt;section id="text"&gt;…&lt;/section&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;article&gt;</td>
+                        <td>Независимая статья</td>
+                        <td>Статья о важности семантики</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;aside&gt;</td>
+                        <td>Дополнительный контент</td>
+                        <td>Заметка на полях</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;footer&gt;</td>
+                        <td>Подвал документа</td>
+                        <td>Копирайт, контакты</td>
+                    </tr>
+
+                    <!-- Форматирование текста -->
+                    <tr>
+                        <td rowspan="5">✍️ Форматирование</td>
+                        <td>&lt;b&gt; / &lt;strong&gt;</td>
+                        <td>Жирное начертание / важность</td>
+                        <td><b>жирный</b>, <strong>важный</strong></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;i&gt; / &lt;em&gt;</td>
+                        <td>Курсив / акцент</td>
+                        <td><i>курсив</i>, <em>акцент</em></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;u&gt; / &lt;ins&gt;</td>
+                        <td>Подчёркнутый / вставленный</td>
+                        <td><u>подч.</u>, <ins>вставка</ins></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;s&gt; / &lt;del&gt;</td>
+                        <td>Перечёркнутый / удалённый</td>
+                        <td><s>переч.</s>, <del>удалено</del></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;mark&gt;</td>
+                        <td>Выделение цветом</td>
+                        <td><mark>выделено</mark></td>
+                    </tr>
+
+                    <!-- Списки -->
+                    <tr>
+                        <td rowspan="3">📋 Списки</td>
+                        <td>&lt;ul&gt; + &lt;li&gt;</td>
+                        <td>Маркированный список</td>
+                        <td>Список любимых блюд</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;ol&gt; + &lt;li&gt;</td>
+                        <td>Нумерованный список</td>
+                        <td>Топ языков программирования</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dl&gt; + &lt;dt&gt;/&lt;dd&gt;</td>
+                        <td>Список определений</td>
+                        <td>Словарь тегов</td>
+                    </tr>
+
+                    <!-- Медиа -->
+                    <tr>
+                        <td rowspan="4">🎬 Медиа</td>
+                        <td>&lt;img&gt;</td>
+                        <td>Встраивание изображения</td>
+                        <td>&lt;img src="cat.jpg" alt="Кот"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;audio&gt;</td>
+                        <td>Аудиоплеер</td>
+                        <td>Музыкальный трек</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;video&gt;</td>
+                        <td>Видеоплеер</td>
+                        <td>Трейлер фильма</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;iframe&gt;</td>
+                        <td>Встраивание внешнего контента</td>
+                        <td>YouTube видео</td>
+                    </tr>
+
+                    <!-- Таблицы -->
+                    <tr>
+                        <td rowspan="4">📊 Таблицы</td>
+                        <td>&lt;table&gt;</td>
+                        <td>Контейнер таблицы</td>
+                        <td>Вся эта таблица</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;tr&gt;, &lt;td&gt;, &lt;th&gt;</td>
+                        <td>Строки, ячейки, заголовки</td>
+                        <td>Обрамление данных</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</td>
+                        <td>Структурные секции таблицы</td>
+                        <td>Шапка, тело, подвал</td>
+                    </tr>
+                    <tr>
+                        <td>rowspan / colspan</td>
+                        <td>Объединение ячеек</td>
+                        <td>В этой таблице категории объединены</td>
+                    </tr>
+
+                    <!-- Формы -->
+                    <tr>
+                        <td rowspan="6">📝 Формы</td>
+                        <td>&lt;form&gt;</td>
+                        <td>Контейнер формы</td>
+                        <td>Анкета ниже</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;input&gt;</td>
+                        <td>Поле ввода (текст, email, radio, checkbox)</td>
+                        <td>Имя, email, выбор вариантов</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;textarea&gt;</td>
+                        <td>Многострочное поле</td>
+                        <td>Поле для комментария</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;select&gt; + &lt;option&gt;</td>
+                        <td>Выпадающий список</td>
+                        <td>Уровень владения HTML</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;fieldset&gt; + &lt;legend&gt;</td>
+                        <td>Группировка элементов формы</td>
+                        <td>Личные данные, оценка сайта</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;button&gt;</td>
+                        <td>Кнопка отправки / сброса</td>
+                        <td>Отправить / Очистить</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">📌 Всего в таблице представлено более 30 тегов с объединением категорий (rowspan). Ячейка "Категория" объединяет строки, относящиеся к одной группе.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- 7. Пользовательские формы (опрос/анкета) -->
+        <section id="form">
+            <h2>Анкета-опросник</h2>
+            <h3><a href="form.html"> Перейти на страницу с анкетой</a></h3>
+        </section>
+
+        <!-- 8. Гиперссылки различных типов -->
+        <section id="links">
+            <h2>Гиперссылки: внутренние, внешние, служебные</h2>
+            <h3>Внутренние анкеры (переход по разделам)</h3>
+            <ul>
+                <li><a href="#text">Перейти к оформлению текста</a></li>
+                <li><a href="#table">Перейти к таблицам</a></li>
+                <li><a href="#form">Перейти к форме</a></li>
+            </ul>
+            <h3>Внешние ссылки (соцсети, любимые ресурсы)</h3>
+            <ul>
+                <li><a href="https://github.com/nstssha" target="_blank" rel="noopener noreferrer">Мой GitHub</a></li>
+                <li><a href="https://metanit.com/web/html5/" target="_blank">Metanit</a></li>
+                <li><a href="https://zealdocs.org/" target="_blank">Справочник ZEAL</a></li>
+                <li><a href="https://validator.w3.org/" target="_blank">W3C Validator (проверка кода)</a></li>
+            </ul>
+            <h3>Ссылка-скачивание (файл в папке media)</h3>
+            <ul>
+                <li><a href="media/check-list.pdf" download>Скачать чек-лист по HTML (PDF)</a></li>
+            </ul>
+            <h3>Контактная ссылка</h3>
+            <ul>
+                <li><a href="mailto:nastyyy101010@gmail.com">Написать письмо автору</a></li>
+            </ul>
+        </section>
+
+        <!-- 9. Спецсимволы (HTML-entities) -->
+        <section id="specials">
+            <h2>Спецсимволы и мнемоники</h2>
+            <p>С помощью спецсимволов можно отображать зарезервированные символы и прочую типографику:</p>
+            <ul>
+                <li>&copy; — знак копирайта (&amp;copy;)</li>
+                <li>&reg; — зарегистрированный знак (&amp;reg;)</li>
+                <li>&trade; — товарный знак (&amp;trade;)</li>
+                <li>&laquo; и &raquo; — кавычки-ёлочки (&amp;laquo; / &amp;raquo;)</li>
+                <li>&mdash; — длинное тире (&amp;mdash;)</li>
+                <li>&nbsp; — неразрывный пробел</li>
+                <li>&lt; и &gt; — угловые скобки (&amp;lt; / &amp;gt;)</li>
+                <li>&amp; — амперсанд (&amp;amp;)</li>
+                <li>&#10084; — сердечко (&#10084;)</li>
+                <li>&#x231B; — песочные часы (&#x231B;)</li>
+            </ul>
+            <p><i>Все перечисленные символы отображаются с помощью HTML-сущностей.</i></p>
+        </section>
+
+        <!-- 10. Семантические теги уже активно использованы выше. 
+             Добавим дополнительный блок article, чтобы подчеркнуть использование article -->
+        <article>
+            <h2>Статья-рассуждение: почему семантика важна</h2>
+            <p>Использование тегов <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> и <code>&lt;footer&gt;</code> улучшает доступность, SEO и читаемость кода. В этом проекте я намеренно применил все перечисленные семантические элементы. Даже этот блок внутри <code>&lt;article&gt;</code> демонстрирует независимый, самодостаточный контент.</p>
+        </article>
+    </main>
+
+    <!-- Подвал документа -->
+    <footer>
+        <p>&copy; 2026, Проект «Как я знаю теги HTML». Все права защищены. </p>
+        <address>Контакты: <a href="mailto:nastyyy101010@gmail.com">nastyyy101010@gmail.com</a></address>
+    </footer>
+</body>
+</html>

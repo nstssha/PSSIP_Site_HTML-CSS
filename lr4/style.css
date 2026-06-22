@@ -1,0 +1,249 @@
+/* 1. СИНТАКСИС CSS: правила именования через дефис, использование фигурных скобок и комментариев */
+
+/* Способ №4: Импортирование (Импортируем 3 нестандартных шрифта) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&family=Playfair+Display:ital@1&display=swap');
+
+/* 2. СЕЛЕКТОРЫ (10 РАЗНЫХ ВИДОВ) */
+
+/* 1. Универсальный селектор */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Селектор тега */
+body {
+    font-family: 'Roboto', sans-serif; /* Шрифт 1 */
+    background-color: #f4f7f6; /* Цвет фона всей страницы */
+    color: #333;
+}
+
+/* 3. Селектор идентификатора */
+#main-header {
+    background: linear-gradient(to right, #ffffff, #e6e6e6); /* Градиент */
+    padding: 2rem;
+    text-align: center;
+}
+
+/* 4. Селектор класса */
+.content-section {
+    background: white;
+    margin: 20px auto;
+    padding: 25px;
+    width: 85%; /* Относительная единица (%) */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Тень */
+}
+
+/* 5. Селектор псевдокласса (hover для ссылок) */
+.main-nav ul li a:hover {
+    color: #e74c3c;
+    background-color: #fceae8;
+    border-radius: 5px;
+}
+
+/* 6. Селектор псевдоэлемента */
+.text-examples li::marker {
+    color: #3498db;
+    content: "➤ ";
+}
+
+/* 7. Дочерний селектор (только прямые li внутри .link-list) */
+.link-list > li {
+    padding: 5px 0;
+}
+
+/* 8. Соседний селектор (p, который идет сразу за h2) */
+h2 + p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* 9. Селектор атрибута (ссылки с target="_blank") */
+a[target="_blank"] {
+    text-decoration: none;
+    border-bottom: 2px dashed #27ae60;
+}
+
+/* 10. Вложенный селектор (все ячейки внутри таблицы) */
+.full-table td {
+    border: 1px solid #dee2e6;
+}
+
+
+/* 3. ЕДИНИЦЫ ИЗМЕРЕНИЯ */
+
+h1 {
+    font-size: 45px; /* Абсолютная */
+    margin-bottom: calc(10px + 2vh); /* Вычисляемая + относительная vh */
+}
+
+h2 {
+    font-size: 1.8rem; /* Относительная */
+    font-family: 'Oswald', sans-serif; /* Шрифт 2 */
+}
+
+
+/* 4. ГРУППЫ СВОЙСТВ */
+
+/* 4.1. Шрифт и оформление текста */
+footer p {
+    font-family: 'Playfair Display', serif; /* Шрифт 3 */
+}
+
+/* Стилизация через CSS (даже если в HTML есть теги, задаем стили здесь) */
+b, strong { color: #2c3e50; font-weight: 900; }
+i, em { color: #2980b9; }
+s, del { color: #c0392b; text-decoration: line-through; }
+u, ins { text-decoration: underline wavy #f1c40f; }
+
+/* 4.2. Стилизация гиперссылок */
+a {
+    transition: all 0.3s ease;
+    color: #3498db;
+}
+
+/* 4.3. Оформление изображений */
+.styled-img {
+    border: 8px solid #fff;
+    border-radius: 20px; /* Скругление углов */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Тень */
+    transition: transform 0.5s ease; /* Для анимации/трансформации */
+}
+
+/* Сделаем картинку круглой при наведении (демонстрация трансформации) */
+.styled-img:hover {
+    transform: scale(1.05) rotate(1deg); /* Трансформация */
+    border-radius: 50%; /* Превращение в круг */
+}
+
+/* 4.4. Стилизация списков (графический маркер) */
+.custom-marker-list {
+    list-style-image: url('https://cdn-icons-png.flaticon.com/16/527/527995.png'); 
+    margin-left: 40px;
+}
+
+/* 4.5. Стилизация таблиц */
+.full-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+.full-table thead th {
+    background-color: #34495e; /* Фон ячеек */
+    color: #ecf0f1; /* Цвет текста */
+    padding: 12px;
+}
+.full-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Зебра для строк */
+}
+
+/* 4.6. Стилизация кнопок и полей форм */
+.preview-input {
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    outline: none;
+}
+.preview-input:focus {
+    border-color: #3498db; /* Эффект при клике */
+}
+.preview-btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.preview-btn:active {
+    transform: translateY(2px);
+}
+
+/* 4.7. Анимация */
+@keyframes entrance {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+    animation: entrance 1s ease-out; /* Анимация появления контента */
+}
+
+/* 5. КАСКАДНОСТЬ И ПРИОРИТЕТЫ */
+/* В файле index.html в блоке <style> задан цвет для h1. 
+   Даже если я напишу здесь header h1 { color: red; }, 
+   внутренняя таблица в HTML победит, так как она ниже по коду. */
+header h1 {
+    color: red; /* Этот цвет будет перекрыт внутренним стилем из index.html */
+}
+
+/* ОФОРМЛЕНИЕ фона */
+
+/* 1. Живой анимированный фон для всей страницы */
+body {
+    background: linear-gradient(-45deg, #f3e5f5, #e3f2fd, #e8f5e9, #fff3e0);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Эффект "стеклянных" карточек для разделов */
+.content-section {
+    background: rgba(255, 255, 255, 0.8) !important; /* Полупрозрачный белый */
+    backdrop-filter: blur(10px); /* Размытие фона за блоком */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+    transition: all 0.3s ease;
+}
+
+/* 4. Красивый индикатор для навигации */
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* 5. Улучшенный вид кнопок */
+.preview-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    border: none;
+    padding: 12px 25px !important;
+    border-radius: 30px !important;
+}
+
+/* 6. Стильная полоса прокрутки */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

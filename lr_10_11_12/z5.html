@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let s1 = "Я люблю Беларусь";
+        let s2 = "Я учусь в Политехническом колледже";
+        let n = 11; // номер варианта
+
+        // 1. Длина s2
+        document.write("Длина s2: " + s2.length + "<br>");
+
+        // 2. n-й символ (индекс n-1) и его ASCII-код
+        let charN = s1.charAt(n - 1); 
+        let code = s1.charCodeAt(n - 1);
+        document.write(n + "-й символ в s1: '" + charN + "', ASCII-код: " + code + "<br>");
+
+        // 3. Замена слова
+        let newS1 = s1.replace("Беларусь", "Гродно");
+        document.write("Результат замены: " + newS1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Artistic">
+<meta name="description" content="Профессиональный ремонт ванных комнат под ключ в Санкт-Петербурге. Гарантия качества, прозрачные цены.">
+<meta name="keywords" content="ремонт ванной, ремонт санузла, спб, под ключ, отделка">
+<link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <title>Artistic - Ремонт ванных комнат</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Lato:wght@400;700;900&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">
+    <img src="image/logo1.png" alt="Логотип Artistic" title="На главную страницу">
+    <div class="logo-text">
+        <span class="logo-title">ARTISTIC</span>
+        <span class="logo-desc">Ремонт ванных комнат</span>
+    </div>
+</a>
+
+            <nav class="nav" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="logo mobile-menu-logo">
+            <div class="logo-text">
+            </div>
+        </div>
+        
+        <button class="close-menu" aria-label="Закрыть меню">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <ul>
+        <li><a href="#home" class="active">Главная</a></li>
+        <li><a href="#prices">Цены</a></li>
+        <li><a href="#calculator">Калькулятор ремонта</a></li>
+        <li><a href="#portfolio">Примеры работ</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+    </ul>
+</nav>
+
+            <div class="header-actions">
+                <div class="phone">
+                    <a href="tel:+89500191919">+8(950) 019 - 19 - 19</a>
+                </div>
+                <button class="burger-menu" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+<main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">ARTISTIC</h1>
+            <p class="hero-subtitle">Бережный и аккуратный ремонт для вашей ванной</p>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <h2 class="calc-title">
+                Рассчитайте стоимость ремонта санузла быстро <br>
+                и легко со скидкой <span class="calc-accent">5 000 рублей</span>
+            </h2>
+            
+            <hr class="calc-divider">
+
+            <div class="calc-card">
+                <div class="calc-image"></div>
+                
+                <div class="calc-form-wrapper">
+                    <form class="calc-form" action="#">
+                        <div class="form-group">
+                            <label>Площадь санузла</label>
+                            <input type="text" placeholder="м2" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Имя</label>
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон</label>
+                            <input type="tel" placeholder="+ 7(___)___-__-__" required>
+                        </div>
+                        <button type="submit" class="calc-btn">Рассчитать стоимость</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Скрипт для автоматического переключения активного пункта меню при скролле
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav ul li a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const activeId = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav ul li a[href="#${activeId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    <section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2 class="section-title">Примеры работ</h2>
+        <hr class="section-divider">
+
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-card">
+    
+    <div class="port-left">
+        <div class="port-ba-container">
+            <div class="port-ba-img" style="background-image: url('image/rabota_1_2\ 6.png');"></div>
+            <div class="port-ba-img" style="background-image: url('image/rabota_1_2\ 7.png');"></div>
+            
+            <div class="ba-divider">
+                <div class="ba-arrows">
+    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 8h43m-6-6l6 6-6 6"/>
+    </svg>
+    
+    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M45 8H2m6-6L2 8l6 6"/>
+    </svg>
+</div>
+            </div>
+            
+            <div class="ba-labels">
+                <div class="label-text">До</div>
+                <div class="label-text">После</div>
+            </div>
+        </div>
+        
+        <div class="port-thumbs">
+            <div class="thumb" style="background-image: url('image/rabota_1_2\ 4.png');"></div>
+            <div class="thumb" style="background-image: url('image/rabota_1_2\ 3.png');"></div>
+            <div class="thumb" style="background-image: url('image/rabota_1_2\ 5.png');"></div>
+        </div>
+    </div>
+
+    <div class="port-right">
+        <h3 class="port-title">Ремонт санузла в стиле лофт</h3>
+        
+        <div class="port-stats">
+            <div class="stat-item">
+                <strong>4,2 м²</strong>
+                <span>Площадь санузла</span>
+            </div>
+            <div class="stat-item">
+                <strong>15 дней</strong>
+                <span>Сроки ремонта</span>
+            </div>
+        </div>
+
+        <div class="port-video" style="background-image: url('image/rabota_1_2\ 8.png');">
+            <div class="video-overlay">
+                <div class="play-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span>СМОТРЕТЬ ВИДЕО</span>
+            </div>
+        </div>
+
+        <a href="#" class="port-btn">Подробнее</a>
+    </div>
+
+</div>
+<div class="portfolio-card">
+    
+    <div class="port-left">
+        <div class="port-ba-container">
+            <div class="port-ba-img" style="background-image: url('image/r2/rabota_1_2\ 6.png');"></div>
+            <div class="port-ba-img" style="background-image: url('image/r2/rabota_1_2\ 7.png');"></div>
+            
+            <div class="ba-divider">
+                <div class="ba-arrows">
+    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 8h43m-6-6l6 6-6 6"/>
+    </svg>
+    
+    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M45 8H2m6-6L2 8l6 6"/>
+    </svg>
+</div>
+            </div>
+            
+            <div class="ba-labels">
+                <div class="label-text">До</div>
+                <div class="label-text">После</div>
+            </div>
+        </div>
+        
+        <div class="port-thumbs">
+            <div class="thumb" style="background-image: url('image/r2/rabota_1_2\ 4.png');"></div>
+            <div class="thumb" style="background-image: url('image/r2/rabota_1_2\ 3.png');"></div>
+            <div class="thumb" style="background-image: url('image/r2/rabota_1_2\ 5.png');"></div>
+        </div>
+    </div>
+
+    <div class="port-right">
+        <h3 class="port-title">Ремонт ванной комнаты и санузла</h3>
+        
+        <div class="port-stats">
+            <div class="stat-item">
+                <strong>5 м²</strong>
+                <span>Площадь санузла</span>
+            </div>
+            <div class="stat-item">
+                <strong>20 дней</strong>
+                <span>Сроки ремонта</span>
+            </div>
+        </div>
+
+        <div class="port-video" style="background-image: url('image/rabota_1_2\ 8.png');">
+            <div class="video-overlay">
+                <div class="play-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span>СМОТРЕТЬ ВИДЕО</span>
+            </div>
+        </div>
+
+        <a href="#" class="port-btn">Подробнее</a>
+    </div>
+
+</div>
+
+<div class="portfolio-card">
+    <div class="port-left">
+        <div class="port-ba-container">
+            <div class="port-ba-img" style="background-image: url('image/r3/rabota_1_2\ 1.png');"></div>
+            <div class="port-ba-img" style="background-image: url('image/r3/rabota_1_2\ 2.png');"></div>
+            
+            <div class="ba-divider">
+                <div class="ba-arrows">
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0 8h43m-6-6l6 6-6 6"/></svg>
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M45 8H2m6-6L2 8l6 6"/></svg>
+                </div>
+            </div>
+            
+            <div class="ba-labels">
+                <div class="label-text">До</div>
+                <div class="label-text">После</div>
+            </div>
+        </div>
+        
+        <div class="port-thumbs">
+            <div class="thumb" style="background-image: url('image/r3/rabota_1_2\ 3.png');"></div>
+            <div class="thumb" style="background-image: url('image/r3/rabota_1_2\ 4.png');"></div>
+            <div class="thumb" style="background-image: url('image/r3/rabota_1_2\ 5.png');"></div>
+        </div>
+    </div>
+
+    <div class="port-right">
+        <h3 class="port-title">Ремонт раздельного санузла</h3>
+        
+        <div class="port-stats">
+            <div class="stat-item">
+                <strong>4 м²</strong>
+                <span>Площадь санузла</span>
+            </div>
+            <div class="stat-item">
+                <strong>15 дней</strong>
+                <span>Сроки ремонта</span>
+            </div>
+        </div>
+
+        <div class="port-video" style="background-image: url('image/r3/rabota_1_2\ 8.png');">
+            <div class="video-overlay">
+                <div class="play-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span>СМОТРЕТЬ ВИДЕО</span>
+            </div>
+        </div>
+
+        <a href="#" class="port-btn">Подробнее</a>
+    </div>
+</div>
+<div class="portfolio-card">
+    <div class="port-left">
+        <div class="port-ba-container">
+            <div class="port-ba-img" style="background-image: url('image/r4/rabota_1_2\ 1.png');"></div>
+            <div class="port-ba-img" style="background-image: url('image/r4/rabota_1_2\ 2.png');"></div>
+            
+            <div class="ba-divider">
+                <div class="ba-arrows">
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0 8h43m-6-6l6 6-6 6"/></svg>
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M45 8H2m6-6L2 8l6 6"/></svg>
+                </div>
+            </div>
+            
+            <div class="ba-labels">
+                <div class="label-text">До</div>
+                <div class="label-text">После</div>
+            </div>
+        </div>
+        
+        <div class="port-thumbs">
+            <div class="thumb" style="background-image: url('image/r4/rabota_1_2\ 3.png');"></div>
+            <div class="thumb" style="background-image: url('image/r4/rabota_1_2\ 4.png');"></div>
+            <div class="thumb" style="background-image: url('image/r4/rabota_1_2\ 5.png');"></div>
+        </div>
+    </div>
+
+    <div class="port-right">
+        <h3 class="port-title">Ремонт совмещенного санузла</h3>
+        
+        <div class="port-stats">
+            <div class="stat-item">
+                <strong>4 м²</strong>
+                <span>Площадь санузла</span>
+            </div>
+            <div class="stat-item">
+                <strong>14 дней</strong>
+                <span>Сроки ремонта</span>
+            </div>
+        </div>
+
+        <div class="port-video" style="background-image: url('image/r3/rabota_1_2\ 8.png');">
+            <div class="video-overlay">
+                <div class="play-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span>СМОТРЕТЬ ВИДЕО</span>
+            </div>
+        </div>
+
+        <a href="#" class="port-btn">Подробнее</a>
+    </div>
+</div>
+
+<div class="portfolio-card">
+    <div class="port-left">
+        <div class="port-ba-container">
+            <div class="port-ba-img" style="background-image: url('image/r5/rabota_1_2\ 1.png');"></div>
+            <div class="port-ba-img" style="background-image: url('image/r5/rabota_1_2\ 2.png');"></div>
+            
+            <div class="ba-divider">
+                <div class="ba-arrows">
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0 8h43m-6-6l6 6-6 6"/></svg>
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M45 8H2m6-6L2 8l6 6"/></svg>
+                </div>
+            </div>
+            
+            <div class="ba-labels">
+                <div class="label-text">До</div>
+                <div class="label-text">После</div>
+            </div>
+        </div>
+        
+        <div class="port-thumbs">
+            <div class="thumb" style="background-image: url('image/r5/rabota_1_2\ 3.png');"></div>
+            <div class="thumb" style="background-image: url('image/r5/rabota_1_2\ 4.png');"></div>
+            <div class="thumb" style="background-image: url('image/r5/rabota_1_2\ 5.png');"></div>
+        </div>
+    </div>
+
+    <div class="port-right">
+        <h3 class="port-title">Ремонт санузла</h3>
+        
+        <div class="port-stats">
+            <div class="stat-item">
+                <strong>4,5 м²</strong>
+                <span>Площадь санузла</span>
+            </div>
+            <div class="stat-item">
+                <strong>15 дней</strong>
+                <span>Сроки ремонта</span>
+            </div>
+        </div>
+
+        <div class="port-video" style="background-image: url('image/r3/rabota_1_2\ 8.png');">
+            <div class="video-overlay">
+                <div class="play-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span>СМОТРЕТЬ ВИДЕО</span>
+            </div>
+        </div>
+
+        <a href="#" class="port-btn">Подробнее</a>
+    </div>
+</div>
+
+<div class="portfolio-card">
+    <div class="port-left">
+        <div class="port-ba-container">
+            <div class="port-ba-img" style="background-image: url('image/r6/rabota_1_2\ 1.png');"></div>
+            <div class="port-ba-img" style="background-image: url('image/r6/rabota_1_2\ 2.png');"></div>
+            
+            <div class="ba-divider">
+                <div class="ba-arrows">
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0 8h43m-6-6l6 6-6 6"/></svg>
+                    <svg width="45" height="16" viewBox="0 0 45 16" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M45 8H2m6-6L2 8l6 6"/></svg>
+                </div>
+            </div>
+            
+            <div class="ba-labels">
+                <div class="label-text">До</div>
+                <div class="label-text">После</div>
+            </div>
+        </div>
+        
+        <div class="port-thumbs">
+            <div class="thumb" style="background-image: url('image/r6/rabota_1_2\ 3.png');"></div>
+            <div class="thumb" style="background-image: url('image/r6/rabota_1_2\ 4.png');"></div>
+            <div class="thumb" style="background-image: url('image/r6/rabota_1_2\ 5.png');"></div>
+        </div>
+    </div>
+
+    <div class="port-right">
+        <h3 class="port-title">Ремонт ванной комнаты</h3>
+        
+        <div class="port-stats">
+            <div class="stat-item">
+                <strong>4,5 м²</strong>
+                <span>Площадь санузла</span>
+            </div>
+            <div class="stat-item">
+                <strong>16 дней</strong>
+                <span>Сроки ремонта</span>
+            </div>
+        </div>
+
+        <div class="port-video" style="background-image: url('image/r3/rabota_1_2\ 8.png');">
+            <div class="video-overlay">
+                <div class="play-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
+                <span>СМОТРЕТЬ ВИДЕО</span>
+            </div>
+        </div>
+
+        <a href="#" class="port-btn">Подробнее</a>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+<section id="prices" class="prices-section">
+    <div class="container relative">
+        
+        <div class="bg-ruble">₽</div>
+
+        <h2 class="section-title">Цены на услуги по ремонту ванной комнаты</h2>
+        <hr class="section-divider">
+
+        <div class="prices-slider-wrapper">
+            
+            <div class="prices-grid" id="prices-grid">
+                
+                <div class="price-category">
+                    <h3 class="category-title">Отделка стен</h3>
+                    <ul class="price-list">
+                        <li><span>Шпатлевка стен</span> <span>от 200р. кв.м</span></li>
+                        <li><span>Облицовка стен мозаикой</span> <span>от 800р. кв.м</span></li>
+                        <li><span>Укладка плитки на стены</span> <span>от 450р. кв.м</span></li>
+                        <li><span>Декоративная штукатурка</span> <span>от 400р. кв.м</span></li>
+                        <li><span>Покраска стен</span> <span>от 200р. кв.м</span></li>
+                        <li><span>Штукатурка стен</span> <span>от 300р. кв.м</span></li>
+                    </ul>
+                </div>
+
+                <div class="price-category">
+                    <h3 class="category-title">Отделка пола</h3>
+                    <ul class="price-list">
+                        <li><span>Утепление пола</span> <span>от 300р. кв.м</span></li>
+                        <li><span>Укладка керамогранита</span> <span>от 550р. кв.м</span></li>
+                        <li><span>Облицовка природным камнем</span> <span>от 900р. кв.м</span></li>
+                        <li><span>Укладка плитки на пол</span> <span>от 450р. кв.м</span></li>
+                        <li><span>Стяжка пола</span> <span>от 350р. кв.м</span></li>
+                        <li><span>Гидроизоляция пола</span> <span>от 180р. кв.м</span></li>
+                    </ul>
+                </div>
+
+                <div class="price-category">
+                    <h3 class="category-title">Отделка потолка</h3>
+                    <ul class="price-list">
+                        <li><span>Окрашивание потолка</span> <span>от 180р. кв.м</span></li>
+                        <li><span>Натяжной потолок</span> <span>от 250р. кв.м</span></li>
+                        <li><span>Реечный потолок (стандарт)</span> <span>от 300р. кв.м</span></li>
+                        <li><span>Реечный потолок (сложный)</span> <span>от 360р. кв.м</span></li>
+                        <li><span>Шпатлевка потолка</span> <span>от 230р. кв.м</span></li>
+                        <li><span>Штукатурка потолка</span> <span>от 500р. кв.м</span></li>
+                        <li><span>Шумоизоляция потолка</span> <span>от 300р. кв.м</span></li>
+                    </ul>
+                </div>
+
+                <div class="price-category">
+                    <h3 class="category-title">Сантехника/электрика</h3>
+                    <ul class="price-list">
+                        <li><span>Установка смесителя</span> <span>от 500р.</span></li>
+                        <li><span>Установка раковины</span> <span>от 1000р.</span></li>
+                        <li><span>Установка полотенцесушителя</span> <span>от 1000р.</span></li>
+                        <li><span>Установка унитаза</span> <span>от 1200р.</span></li>
+                        <li><span>Установка ванны</span> <span>от 1500р.</span></li>
+                        <li><span>Установка душевой кабины</span> <span>от 3000р.</span></li>
+                        <li><span>Установка стиральной машины</span> <span>от 700р.</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="slider-dots" id="prices-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+    // Скрипт для слайдера цен на мобильных
+    document.addEventListener('DOMContentLoaded', () => {
+        const pricesGrid = document.getElementById('prices-grid');
+        const dots = document.querySelectorAll('#prices-dots .dot');
+
+        if (pricesGrid && dots.length > 0) {
+            pricesGrid.addEventListener('scroll', () => {
+                // Вычисляем ширину одной карточки и текущую позицию скролла
+                const scrollLeft = pricesGrid.scrollLeft;
+                const slideWidth = pricesGrid.clientWidth;
+                
+                // Определяем индекс активного слайда
+                const activeIndex = Math.round(scrollLeft / slideWidth);
+
+                // Переключаем классы у точек
+                dots.forEach((dot, index) => {
+                    if (index === activeIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            });
+        }
+    });
+</script>
+<section id="news" class="news-section">
+    <div class="container relative">
+        
+        <div class="bg-quote">“</div>
+
+        <h2 class="section-title">Ремонт ванных комнат в Санкт-Петербурге</h2>
+
+        <div class="news-text desktop-text">
+            <p>Ремонт ванной под ключ в Санкт-Петербурге. Ванная комната - одно из необходимых и посещаемых мест в нашем доме. Утром, вставая с постели, мы направляемся в ванную комнату для того, чтобы окончательно пробудиться ото сна, там же, после тяжелого трудового дня мы подготавливаемся к вечернему отдыху.<br>
+            И, несомненно, каждый мечтает о том, чтобы это место релаксации дарило ощущение комфорта и уюта.<br>
+            Немаловажен и тот момент, что когда приходят гости, они, чаще всего первым делом идут в ванную и ее внешний вид во многом определяет впечатление о хозяевах.</p>
+
+            <p>Надежная, шикарная, удобная ванная - результат профессионального ремонта. Наша компания специализируется на ремонте ванных комнат в городе Санкт-Петербурге. Главная задача наших мастеров - выполнить такой ремонт ванной, который долгие годы будет радовать всю Вашу семью, а гости и соседи будут в восторге.</p>
+
+            <p>Основные виды работ, выполняемые нами при отделке ванной комнаты: замена старой, приевшейся сантехники, на новую; замена старых электропроводов; гидроизоляция пола и стен ванной комнаты; выравнивание стен; монтаж потолка и установка системы освещения; укладка плитки; установка необходимых сантехнических приборов.</p>
+
+            <p>Каждый этап работы согласовывается с заказчиком, берутся во внимание все его пожелания. Цены наших услуг намного ниже цен конкурирующих фирм, при этом качество выполнения ремонта остается на высшем уровне. Предлагаем нашим заказчикам лучший по всему городу сервис обслуживания.</p>
+
+            <p>Уже приняли решение о ремонте ванной комнаты в Санкт-Петербурге? Звоните нам! Будем рады предоставить исчерпывающие ответы на все Ваши вопросы.</p>
+        </div>
+
+        <div class="news-text mobile-text">
+            <p>Ванная комната - одно из необходимых и посещаемых мест в нашем доме. Утром, вставая с постели, мы направляемся в ванную... <a href="#" class="read-more-arrow">→</a></p>
+        </div>
+
+    </div>
+</section>
+<section id="reviews" class="reviews-section">
+    <div class="container" style="max-width: 1480px;">
+        <h2 class="section-title">Отзывы</h2>
+        
+        <div class="reviews-slider-wrapper">
+            <button class="review-arrow prev-arrow" aria-label="Предыдущий отзыв">
+                <svg width="20" height="36" viewBox="0 0 24 40" fill="none" stroke="#693030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2L4 20L22 38"/>
+                </svg>
+            </button>
+
+            <div class="reviews-track" id="reviews-track">
+                
+                <div class="review-card">
+                    <div class="review-photo" style="background-image: url('image/rabota_1_3\ 2.png');"></div>
+                    <div class="review-author">От Анны Сергеевны</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-photo" style="background-image: url('image/rabota_1_3\ 2.png');"></div>
+                    <div class="review-author">От Марии Романовны</div>
+                </div>
+
+                <div class="review-card active">
+                    <div class="review-photo" style="background-image: url('image/rabota_1_3\ 2.png');"></div>
+                    <div class="review-author">От Николая Петровича</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-photo" style="background-image: url('image/rabota_1_3\ 2.png');"></div>
+                    <div class="review-author">От Нины Семеновны</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-photo" style="background-image: url('image/rabota_1_3\ 2.png');"></div>
+                    <div class="review-author">От Ивана Алексеевича</div>
+                </div>
+
+            </div>
+
+            <button class="review-arrow next-arrow" aria-label="Следующий отзыв">
+                <svg width="20" height="36" viewBox="0 0 24 40" fill="none" stroke="#693030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 2L20 20L2 38"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="reviews-pagination" id="reviews-dots">
+            <span class="rev-dot"></span>
+            <span class="rev-dot"></span>
+            <span class="rev-dot active"></span>
+            <span class="rev-dot"></span>
+            <span class="rev-dot"></span>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('reviews-track');
+        const cards = document.querySelectorAll('.review-card');
+        const dots = document.querySelectorAll('.rev-dot');
+        const wrapper = document.querySelector('.reviews-slider-wrapper');
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
+        
+        // Начинаем с карточки под индексом 2 (Николай Петрович)
+        let currentIndex = 2;
+
+        function updateSlider() {
+            // 1. Убираем классы active у всех
+            cards.forEach(card => card.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // 2. Добавляем active текущей карточке
+            cards[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+
+            // 3. Магия математики: высчитываем сдвиг ленты, чтобы активная карточка была ровно по центру
+            const wrapperCenter = wrapper.offsetWidth / 2;
+            const cardCenter = cards[currentIndex].offsetLeft + (cards[currentIndex].offsetWidth / 2);
+            const translateValue = wrapperCenter - cardCenter;
+
+            // 4. Двигаем ленту
+            track.style.transform = `translateX(${translateValue}px)`;
+        }
+
+        // Кнопка Вправо (зацикливаем)
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateSlider();
+        });
+
+        // Кнопка Влево (зацикливаем)
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateSlider();
+        });
+
+        // Клик по точкам
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        // Пересчитываем позицию при повороте телефона или ресайзе окна
+        window.addEventListener('resize', updateSlider);
+
+        // Запускаем при загрузке
+        updateSlider();
+    });
+</script>
+</main>
+<footer class="footer">
+    <div class="container footer-container">
+        
+        <div class="footer-col footer-logo-col">
+            <a href="#home" class="footer-logo">
+    <img src="image/logo_f.png" alt="Логотип Artistic" title="На главную страницу">
+    <div class="footer-logo-text">
+        <span class="logo-title">ARTISTIC</span>
+        <span class="logo-desc desktop-desc">Ремонт ванных комнат</span>
+        <span class="logo-desc mobile-desc">Строительная компания</span>
+    </div>
+</a>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-title">ГЛАВНАЯ</h4>
+            <ul class="footer-list">
+                <li class="desktop-link"><a href="#">РЕМОНТ ВАННЫЙ КОМНАТ</a></li>
+                <li class="mobile-link"><a href="#prices">ЦЕНЫ</a></li>
+                <li><a href="#">НАШИ УСЛУГИ</a></li>
+                <li><a href="#portfolio">ФОТО РАБОТ</a></li>
+                <li><a href="#">ВИДЕО РАБОТ</a></li>
+                <li class="mobile-link dots-link"><a href="#">•••</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col desktop-col">
+            <h4 class="footer-title">ПОМОЩЬ</h4>
+            <ul class="footer-list">
+                <li><a href="#prices">ЦЕНЫ</a></li>
+                <li><a href="#calculator">БЕСПЛАТНЫЙ ЗАМЕР</a></li>
+                <li><a href="#">КОНТАКТЫ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-address-col">
+            <h4 class="footer-title">НАШ АДРЕС</h4>
+            <div class="footer-text-block">
+                <p>Ремонт санузлов <br class="mobile-br">в Санкт-Петербурге</p>
+                <p class="footer-schedule">08.00 - 20.00 <br class="mobile-br">Без выходных</p>
+            </div>
+
+            <div class="footer-socials">
+                <h4 class="footer-title desktop-col" style="margin-top: 30px;">МЫ В СОЦСЕТЯХ</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="VK">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 2.181-2.833 3.053-4.57 2.859-5.3-.153-.585-1.285-.436-1.285-.436l-3.692.015c-.464.013-.674.204-.848.563-1.002 2.062-2.43 4.312-3.824 4.312-.486 0-.649-.328-.649-1.077v-3.565c0-.666-.192-.953-.743-1.053-.332-.06-.704-.082-1.258-.082-1.411 0-2.608.13-3.238.435-.407.195-.717.625-.526.65.25.032.818.15 1.115.556.376.516.36 1.745.36 1.745s.103 2.994-.486 3.315c-.404.22-1.156-.22-2.585-2.668-1.414-2.415-1.996-4.502-1.996-4.502s-.167-.406-.597-.562c-.482-.175-1.156-.233-1.156-.233l-3.518.015s-.527.016-.723.245c-.174.203-.016.632-.016.632s2.748 6.442 5.864 9.697c2.863 2.986 6.113 2.887 6.113 2.887z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container" style="text-align: center; padding-top: 20px; font-size: 12px; color: #8A8A8A;">
+    © 2026 Artistic. Все права защищены.
+</div>
+</footer>
+<script>
+    // Скрипт для полноэкранного мобильного меню
+    document.addEventListener('DOMContentLoaded', () => {
+        const burgerBtn = document.querySelector('.burger-menu');
+        const closeBtn = document.querySelector('.close-menu');
+        const navMenu = document.getElementById('mobile-nav');
+        const navLinks = document.querySelectorAll('.nav ul li a');
+
+        // Функция открытия
+        function openMenu() {
+            navMenu.classList.add('open');
+            document.body.classList.add('menu-open'); // Блокируем скролл сайта
+        }
+
+        // Функция закрытия
+        function closeMenu() {
+            navMenu.classList.remove('open');
+            document.body.classList.remove('menu-open'); // Возвращаем скролл
+        }
+
+        if(burgerBtn) burgerBtn.addEventListener('click', openMenu);
+        if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        // Закрываем меню при клике на любую ссылку
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    });
+</script>
+</body>
+</html>

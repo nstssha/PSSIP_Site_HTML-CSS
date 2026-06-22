@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВАРИАНТ 11 - Наумовец Анастасия</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="logo"><strong>NAUMOVETS 11</strong></div>
+        <input type="checkbox" id="burger-check">
+        <label for="burger-check" class="burger-icon">☰</label>
+        <nav class="nav-links">
+            <a href="#">Главная</a>
+            <a href="#">Каталог</a>
+            <a href="#">О нас</a>
+            <a href="#">Доставка</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <aside class="col-left">
+        <div class="box b1">Новости сайта</div>
+        <div class="box b2">Текущие акции</div>
+        <div class="box b3">Рекламный баннер</div>
+    </aside>
+
+    <main class="col-main">
+        <!-- КАРТОЧКА ТОВАРА -->
+        <section class="product-section">
+            <div class="product-card">
+                <div class="product-gallery">
+                    <div class="thumbnails">
+                        <img src="https://i.ebayimg.com/images/g/ml8AAOSwBLJdsgBx/s-l1600.webp" alt="1">
+                        <img src="https://i.ebayimg.com/images/g/BBkAAOSwkeddsgB0/s-l1600.webp" alt="2">
+                        <img src="https://i.ebayimg.com/images/g/XtMAAOSwvF9dsgB1/s-l1600.webp" alt="3" class="active">
+                        <img src="https://i.ebayimg.com/images/g/BBkAAOSwkeddsgB0/s-l1600.webp" alt="4">
+                    </div>
+                    <div class="main-img-box">
+                        <img src="https://i.ebayimg.com/images/g/s9sAAOSwlPFdsgBz/s-l1600.webp" alt="Main">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h1>Кроссовки Prien Birkenstock FootPrints</h1>
+                    <div class="price">4 450 ₽</div>
+                    <div class="articul">Артикул: 051753</div>
+                    
+                    <div class="btn-group">
+                        <button class="btn-opt active">Стандартная стопа</button>
+                        <button class="btn-opt">Широкая стопа</button>
+                    </div>
+                    
+                    <div class="details-list">
+                        <p>Категория: <strong>Туфли</strong></p>
+                        <p>Размер: 
+                            <select>
+                                <option>35</option><option>36</option><option>37</option>
+                            </select>
+                        </p>
+                        <p>Вналичие: 5</p>
+                    </div>
+                    
+                    <div class="buy-wrapper">
+                        <button class="buy-btn-main">В КОРЗИНУ</button>
+                        <div class="buy-shadow"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-tags">
+                <strong>Метки:</strong> Кожаная обувь, Кожаные мужские туфли, Коричневые мужские туфли, Мужские осенние туфли, Туфли мужские на шнурках, Анатомическая подошва, Повседневная обувь, Натуральная кожа, Немецкое качество, Комфортная ходьба.
+            </div>
+        </section>
+
+        <!-- ОФОРМЛЕНИЕ ЗАКАЗА -->
+        <section class="order-section">
+            <h2>Оформление заказа нового клиента</h2>
+            
+            <div class="section-header">
+                1. ЗАПОЛНИТЕ ПОЛЯ 
+                <span class="login-link">(Я УЖЕ ЗАРЕГИСТРИРОВАН <a href="#">ВОЙТИ</a>)</span>
+            </div>
+
+            <form>
+                <div class="form-grid">
+                    <div class="form-group"><label>Фамилия</label><input type="text"></div>
+                    <div class="form-group"><label>Имя Отчество</label><input type="text"></div>
+                    <div class="form-group"><label>Индекс</label><input type="text"></div>
+                    <div class="form-group"><label>Областной район</label><input type="text"></div>
+                    <div class="form-group"><label>Город</label><input type="text"></div>
+                    <div class="form-group"><label>Улица</label><input type="text"></div>
+                    <div class="form-group"><label>Дом, квартира</label><input type="text"></div>
+                    
+                    <div class="delivery-sub-section">
+                        <div class="section-header" style="margin: 0;">2. ДОСТАВКА</div>
+                        <div class="delivery-selects">
+                            <select><option>Город/Филиал</option></select>
+                            <select style="color: #d35400;"><option>Выберите способ доставки</option></select>
+                            <select><option>&nbsp;</option></select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: -30px;">
+                        <label>7XXXXXXXXXX</label>
+                        <input type="tel">
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <div class="section-header">3. ОПЛАТА ЗАКАЗА</div>
+                    <div class="payment-option" style="margin-top: 15px;">
+                        <input type="radio" name="pay" id="p1" checked>
+                        <label for="p1">Оплата перед получением</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" name="pay" id="p2">
+                        <label for="p2">Оплата банковской картой</label>
+                        <div class="payment-icons">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnBmf5vMaxG1BlfrsHgmI7Xij9A6JJA784kQ&s" alt="card">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <aside class="col-right">
+        <div class="box b5">Поиск по товарам</div>
+        <div class="box b6" style="flex-grow: 1;">Мы в соцсетях</div>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 Анастасия Наумовец. Группа ПЗТ-42. Вариант 11.</p>
+    </footer>
+</div>
+
+</body>
+</html>

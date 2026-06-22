@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4: Математический расчет</title>
+    <!-- Подключаем внешний файл -->
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <h2>Расчет по формуле с проверками</h2>
+    
+    <div>
+        Введите a: <input type="text" id="valA" value="2"><br><br>
+        Введите b: <input type="text" id="valB" value="4"><br><br>
+        Введите c: <input type="text" id="valC" value="1"><br><br>
+        <button onclick="startCalculation()">Рассчитать</button>
+    </div>
+
+    <hr>
+    <div id="resultOutput">
+        Здесь появится результат...
+    </div>
+
+    <script>
+        function startCalculation() {
+            // Получаем значения из полей ввода
+            let a = document.getElementById('valA').value;
+            let b = document.getElementById('valB').value;
+            let c = document.getElementById('valC').value;
+
+            // Вызываем функцию из внешнего файла
+            let finalResult = calculateFormula(a, b, c);
+
+            // Выводим результат в тело документа
+            document.getElementById('resultOutput').innerHTML = 
+                "<strong>Результат:</strong> " + finalResult;
+        }
+    </script>
+
+</body>
+</html>

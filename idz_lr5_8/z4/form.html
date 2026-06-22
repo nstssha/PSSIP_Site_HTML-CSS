@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Оформление заказа нового клиента</h1>
+
+    <!-- СЕКЦИЯ 1: ЗАПОЛНИТЕ ПОЛЯ -->
+    <div class="section-header">
+        1. ЗАПОЛНИТЕ ПОЛЯ 
+        <span class="login-link">(Я УЖЕ ЗАРЕГИСТРИРОВАН <a href="#">ВОЙТИ</a>)</span>
+    </div>
+
+    <div class="form-grid">
+        <!-- Левая колонка -->
+        <div class="form-group">
+            <label>Фамилия</label>
+            <input type="text">
+        </div>
+        <!-- Правая колонка -->
+        <div class="form-group">
+            <label>Имя Отчество</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Индекс</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Областной район</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Город</label>
+            <input type="text">
+        </div>
+        <div class="form-group">
+            <label>Улица</label>
+            <input type="text">
+        </div>
+
+        <!-- Нижний ряд: Дом и Доставка -->
+        <div class="form-group">
+            <label>Дом, квартира</label>
+            <input type="text">
+        </div>
+        
+        <div class="delivery-section">
+            <div class="section-header" style="margin-top: 0; margin-bottom: 15px;">2. ДОСТАВКА</div>
+            <div class="delivery-selects">
+                <select><option>Город/Филиал</option></select>
+                <select style="color: #d35400;"><option>Выберите способ доставки</option></select>
+                <select><option>&nbsp;</option></select>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-top: -60px;"> <!-- Поднимаем телефон под Дом -->
+            <label>7XXXXXXXXXX</label>
+            <input type="tel">
+        </div>
+    </div>
+
+    <!-- СЕКЦИЯ 3: ОПЛАТА -->
+    <div class="payment-section">
+        <div class="section-header">3. ОПЛАТА ЗАКАЗА</div>
+        
+        <div class="payment-option" style="margin-top: 20px;">
+            <input type="radio" name="payment" id="pay1" checked>
+            <label for="pay1" style="font-size: 13px; margin-bottom: 0;">Оплата перед получением</label>
+            <span class="help-icon">?</span>
+        </div>
+
+        <div class="payment-option">
+            <input type="radio" name="payment" id="pay2">
+            <label for="pay2" style="font-size: 13px; margin-bottom: 0;">Оплата банковской картой</label>
+            <div class="payment-icons">
+                <!-- Заглушки логотипов -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnBmf5vMaxG1BlfrsHgmI7Xij9A6JJA784kQ&s">
+            </div>
+            <span class="help-icon">?</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>19/03/2017</div>
+        <div>Copyright ©2015 by Oriflame Cosmetics Global SA</div>
+        <div>11</div>
+    </div>
+</div>
+
+</body>
+</html>

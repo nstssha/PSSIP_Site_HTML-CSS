@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" href="media/form.png">
+    <meta charset="UTF-8">
+    <title>Анкета-опросник</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Способ №2: Внутренняя таблица стилей -->
+    <style>
+        /* Способ №4: Импортирование шрифтов */
+        @import url('https://fonts.googleapis.com/css2?family=Verdana&family=Roboto:wght@400;700&display=swap');
+
+        /* 1. СИНТАКСИС И КОММЕНТАРИИ */
+        /* Базовые стили для всей страницы */
+
+        /* СЕЛЕКТОР 1: Универсальный */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* СЕЛЕКТОР 2: Тег */
+        body {
+            font-family: 'Roboto', sans-serif; /* Нестандартный шрифт 1 */
+            background-color: #eeeeee; /* Цвет фона страницы */
+            padding: 20px;
+            color: #333333;
+        }
+
+        /* СЕЛЕКТОР 3: Идентификатор */
+        #form-title {
+            text-align: center;
+            color: #2c3e50;
+            text-decoration: underline; /* Оформление текста */
+            margin-bottom: 20px;
+        }
+
+        /* 4. ЕДИНИЦЫ ИЗМЕРЕНИЯ */
+        form {
+            background-color: white;
+            border: 2px solid black; /* Простой бордер */
+            padding: 20px;
+            width: 80%;           /* Относительная единица */
+            max-width: 700px;     /* Абсолютная единица (px) */
+            margin: 0 auto;
+            /* Вычисляемая единица */
+            min-height: calc(50vh + 100px); 
+        }
+
+        /* СЕЛЕКТОР 4: Класс */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        /* СЕЛЕКТОР 5: Псевдокласс */
+        input:focus {
+            background-color: #e8f0fe; /* Цвет при клике в поле */
+            border: 2px solid blue;
+        }
+
+        /* СЕЛЕКТОР 6: Псевдоэлемент */
+        legend::before {
+            content: "➤ ";
+            color: green;
+        }
+
+        /* СЕЛЕКТОР 7: Дочерний селектор */
+        fieldset > p {
+            font-weight: bold; /* Жирный текст */
+            margin: 10px 0;
+            color: #444;
+        }
+
+        /* СЕЛЕКТОР 8: Соседний селектор */
+        label + input {
+            margin-left: 10px;
+        }
+
+        /* СЕЛЕКТОР 9: Селектор атрибутов */
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* СЕЛЕКТОР 10: Вложенный селектор */
+        form fieldset {
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+        }
+
+        /* 5. ГРУППЫ СВОЙСТВ */
+
+        /* Стилизация полей ввода */
+        input[type="text"], input[type="email"], select, textarea {
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-family: 'Verdana', sans-serif; /* Нестандартный шрифт 2 */
+        }
+
+        /* Стилизация ссылок */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: blue;
+        }
+        /* Псевдокласс hover (эффект при наведении) */
+        a:hover {
+            color: red;
+            text-decoration: none;
+        }
+
+        /* Анимация и трансформация */
+        button:active {
+            transform: scale(0.9); /* Трансформация: уменьшение при клике */
+        }
+
+        @keyframes simple-fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        form {
+            animation: simple-fade 1s; /* Простая анимация появления */
+        }
+
+        /* Каскадность и приоритет */
+        .back-link { color: gray; }
+        /* Этот стиль ниже в коде и специфичнее, поэтому применится он */
+        body a.back-link { color: darkblue !important; }
+
+    </style>
+</head>
+<body>
+
+<!-- Добавили ID для селектора -->
+<h2 id="form-title">📝 Анкета: Ваше мнение о моём сайте</h2>
+
+<form action="#" method="post">
+    <fieldset>
+        <legend>Личные данные</legend>
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Оценка сайта</legend>
+        <p>Как вы нашли этот сайт?</p>
+        <input type="radio" id="search" name="found" value="search">
+        <label for="search">Поисковик</label><br>
+        <input type="radio" id="social" name="found" value="social">
+        <label for="social">Соцсети</label><br>
+        <input type="radio" id="friend" name="found" value="friend">
+        <label for="friend">Друзья</label><br>
+
+        <p>Какие разделы вам понравились?</p>
+        <input type="checkbox" id="ch_text" name="like" value="text">
+        <label for="ch_text">Текст</label><br>
+        <input type="checkbox" id="ch_media" name="like" value="media">
+        <label for="ch_media">Медиа</label><br>
+        <input type="checkbox" id="ch_table" name="like" value="table">
+        <label for="ch_table">Таблица</label><br>
+        <input type="checkbox" id="ch_form" name="like" value="form">
+        <label for="ch_form">Форма</label><br>
+
+        <p>Ваш уровень владения HTML:</p>
+        <select name="level">
+            <option value="beginner">Новичок</option>
+            <option value="intermediate" selected>Средний</option>
+            <option value="advanced">Продвинутый</option>
+            <option value="pro">Профи</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Обратная связь</legend>
+        <label for="comment">Ваши пожелания / замечания:</label><br>
+        <!-- Способ №3: Внутритеговое включение (Inline) -->
+        <textarea id="comment" name="comment" rows="4" cols="50" style="margin-top: 10px; border-style: dashed;" placeholder="Здесь можно написать пару тёплых слов..."></textarea>
+    </fieldset>
+
+    <button type="submit">Отправить анкету</button>
+    <button type="reset" style="background-color: lightgray;">Очистить</button>
+</form>
+
+<!-- Способ №3: Внутритеговый стиль для ссылки -->
+<a href="index.html" class="back-link" style="font-style: italic;"> Перейти на главную страницу</a>
+
+</body>
+</html>
